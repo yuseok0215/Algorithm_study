@@ -4,7 +4,7 @@ n,m,k,x = map(int, input().split())
 roads = [[] for _ in range(n+1)]
 for _ in range(m):
     start,end = map(int, input().split())
-    roads[start].append(end)
+    roads[start].append(end) # 1 2   1 3 roads[1] = [2,3]
 
 dist = [-1] * (n+1)
 dist[x] = 0
@@ -14,6 +14,7 @@ q.append(x)
 
 while q:
     start = q.popleft()
+    
     for end in roads[start]:
         if dist[end] == -1:
             dist[end] = dist[start] + 1

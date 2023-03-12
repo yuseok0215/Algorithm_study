@@ -49,11 +49,13 @@ def make_wall(count):
     if count == 3:
         bfs()
         return
-    for i in range(n):
-        for j in range(m):
+    for i in range(n):                  
+        for j in range(m):   
             if graph[i][j] == 0:
                 graph[i][j] = 1
+                # count += 1 
                 make_wall(count+1)
+                # count -= 1
                 graph[i][j] = 0
 
 make_wall(0)
